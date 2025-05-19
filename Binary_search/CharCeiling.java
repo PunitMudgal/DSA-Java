@@ -11,7 +11,9 @@ public class CharCeiling {
         char[] characters = { 'A', 'C', 'F', 'J', 'N', 'R', };
         char target = 'A';
         char answer = findCeiling(characters, target);
+        char answer2 = secondAnswer(characters, target);
         System.out.println("Answer is: " + answer);
+        System.out.println("Answer 2 is: " + answer2);
     }
 
     static char findCeiling(char[] chars, char target) {
@@ -27,6 +29,22 @@ public class CharCeiling {
                 e = mid - 1;
         }
         return chars[s % chars.length];
+    }
+
+    static char secondAnswer(char[] chars, char target) {
+        int s = 0;
+        int e = chars.length - 1;
+        char ans = chars[0];
+        while (s <= e) {
+            int mid = s + (e - s) / 2;
+
+            if (chars[mid] > target) {
+                ans = chars[mid];
+                e = mid - 1;
+            } else
+                s = mid + 1;
+        }
+        return ans;
     }
 
 }
