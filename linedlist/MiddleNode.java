@@ -5,5 +5,6 @@
 package linedlist;
 
 public class MiddleNode {
+    // can be solved using 2 pointer slow and fast method
 
 }

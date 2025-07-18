@@ -162,4 +162,34 @@ public class LinkedList {
         }
         return slow.value;
     }
+
+    public int sizeOfList() {
+        Node temp = head;
+        int size = 0;
+        while (temp != null) {
+            temp = temp.next;
+            size++;
+        }
+        System.out.println("size is: " + size);
+        return size;
+    }
+
+    // remove nth from last
+    public void removeNthFromEnd(int n) {
+        if (n < 0 || n >= length) {
+            return;
+        }
+
+        Node temp = head;
+        int size = 0;
+        while (temp != null) {
+            temp = temp.next;
+            size++;
+        }
+        for (int i = 0; i < (size - n); i++) {
+            temp = temp.next;
+        }
+        temp.next = temp.next.next;
+    }
+
 }

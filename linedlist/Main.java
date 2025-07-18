@@ -6,10 +6,11 @@ public class Main {
         list.insertStart(1);
         list.insertEnd(3);
         list.insertEnd(5);
-        list.printList();
-
         list.insertElem(3, 4);
-        list.findMiddle();
+
+        list.printList();
+        list.removeNthFromEnd(2);
+        System.out.println("after");
         list.printList();
     }
 
